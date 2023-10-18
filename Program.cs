@@ -6,7 +6,6 @@ namespace Tests
     {
         static void Main()
         {
-            int e, h, a, t, d;
             Console.WriteLine("Игра Быки и Коровы");
             int[,] array = new int[2, 2];
             Random random = new Random();
@@ -27,7 +26,6 @@ namespace Tests
             while (!guessed && attempts < 10)
             {
                 Console.WriteLine($"Попытка {attempts + 1}: ");
-                Rand rnrn = new Rand();
                 int[] usernumber = rnrn.Out();
                 for (int i = 0; i < usernumber.Length; i++)
                 {
