@@ -13,9 +13,9 @@ namespace Tests
         public int[] Out()
         {
             string input = Console.ReadLine();
-            char[]  nn = input.ToCharArray();
-            
-            if (nn.Length != 4 )
+            char[] nn = input.ToCharArray();
+
+            if (nn.Length != 4)
             {
                 Console.WriteLine("Вы неверно ввели число"); Environment.Exit(0);
             }
@@ -23,7 +23,7 @@ namespace Tests
             this.chislo = new int[4];
             for (int i = 0; i < 4; i++)
             {
-                this.chislo[i] = Convert.ToInt32(nn[i]-48);
+                this.chislo[i] = Convert.ToInt32(nn[i] - 48);
             }
 
             return this.chislo;
