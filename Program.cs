@@ -11,12 +11,23 @@ namespace Tests
             Random random = new Random();
             int[] mass = new int[4];
             int z = 0;
-
-            for (int i = 0; i < 2; i++)
+            int[] numb = new int[10];
+            for (int q = 0; q < numb.Length; q++)
             {
-                for (int j = 0; j < 2; j++)
+                numb[q] = q;
+            }
+            for (int i = numb.Length - 1; i > 0; i--)
+            {
+                int j = random.Next(i + 1);
+                int temp = numb[i];
+                numb[i] = numb[j];
+                numb[j] = temp;
+            }
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    array[i, j] = random.Next(0, 10);
+                    array[i, j] = numb[(i * array.GetLength(1) + j) % numb.Length];
                     mass[z] = array[i, j];
                     z++;
                 }
@@ -40,7 +51,7 @@ namespace Tests
                 {
                     if (usernumber.Contains(mass[i]))
                     {
-                        if (usernumber[i] == mass[i] && i ==i)
+                        if (usernumber[i] == mass[i])
                         { bik++; }
                         else
                         { korova++; }
